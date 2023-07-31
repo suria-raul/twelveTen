@@ -1,0 +1,42 @@
+Task 1 Answer:
+// ssh to staging
+// use the command below to login in mysql
+mysql -u root -p
+// will ask for mysql password
+// enter password
+
+// run the command below to select db table
+USE foo_staging;
+
+// run the query below to view result for user with the id 3
+SELECT users.name, transactions.type FROM users, transactions WHERE users.id = 3 LIMIT 1;
+
+
+Task 2 Answer:
+// ssh to live
+// use the command below to login in mysql
+mysql -u root -p
+// will ask for mysql password
+// enter password
+
+// run the command below to select db table
+USE bar_live;
+
+// run the query below to view result for Mike Ross
+SELECT users.name, transactions.type FROM users, transactions WHERE users.name = "Mike Ross" LIMIT 1;
+
+
+Task 3 Answer:
+// ssh to live
+// use the command below to login in mysql
+mysql -u root -p
+// will ask for mysql password
+// enter password
+
+// run the command below to select db table
+USE bar_live;
+
+// use the query below to view transactions from the month of April
+SELECT * from transactions WHERE created_at LIKE '2020-04-01';
+
+
