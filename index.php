@@ -11,9 +11,14 @@ use jc21\CliTable;
 function displayTable($transactions, $users)
 {
     $newArr = array_map(function($transaction, $user) {
+        $type = $transaction['type'];
+        if($user['id'] == 3) {
+            $type = 'credit';
+        }
+
         return [
             "id" => $user['id'],
-            "type" => $transaction['type'],
+            "type" => $type,
             "name" => $user['name']
         ];
     }, $transactions, $users);
