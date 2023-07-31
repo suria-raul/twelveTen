@@ -2,8 +2,6 @@
 
 namespace App;
 
-require 'vendor/autoload.php';
-
 use jc21\CliTable;
 
 class CliTableOverride extends CliTable {
