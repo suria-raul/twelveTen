@@ -7,6 +7,7 @@
 require 'vendor/autoload.php';
 
 use jc21\CliTable;
+use App\CliTableOverride;
 
 function displayTable($transactions, $users)
 {
@@ -21,6 +22,7 @@ function displayTable($transactions, $users)
             "type" => $type,
             "name" => $user['name']
         ];
+        
     }, $transactions, $users);
 
     // $newArr = [];
@@ -32,9 +34,9 @@ function displayTable($transactions, $users)
     //     ];
     // }
 
-    $table = new CliTable;
-    $table->setTableColor('blue');
-    $table->setHeaderColor('cyan');
+    $table = new CliTableOverride();
+    $table->setTableColor('white');
+    $table->setHeaderColor('white');
     $table->addField('id', 'id', false, 'white');
     $table->addField('type', 'type', false, 'white');
     $table->addField('name', 'name', false, 'white');
